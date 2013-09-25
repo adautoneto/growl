@@ -1,0 +1,27 @@
+.dock {
+	font: normal 20px/40px Helvetica, Arial, Sans-Serif;
+	letter-spacing: -1px;
+	text-align: center;
+	position: fixed; /* changed to absolute to make it work on ie6 as fixed */
+	left: 25%;
+	width: 50%;
+	bottom: 0;
+	z-index: 1010;	}
+.notice {width: 100%;}
+.notice p, .notice h3 {padding:0px;	margin:0px;}
+.notice h3 {margin-top: 2px;}
+
+#lbCloseLink {
+	background:transparent url(Images/btn_close.png) no-repeat center center;
+	display:block;
+	float:right;
+	height:30px;
+	margin:-6px;
+	width:30px;	}
+#lbTop {position: relative;}
+#lbTop, #lbBottom {
+	border-top-style:none;
+	font-family:Verdana,Helvetica,sans-serif;
+	font-size:10px;
+	line-height:1.4em;
+	text-align:left;}

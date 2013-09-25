@@ -1,0 +1,56 @@
+<html>
+<head>
+<title>Growl</title>
+<script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="jquery.maskedinput-1.2.2.js"></script>
+<script type="text/javascript" src="jquery.growl.js"></script>
+<link href="growl.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+$(function(){	
+	$("#send").click(function(){
+	    
+		$.growl.settings.noticeElement("#box");
+		
+		//$.growl("Confirmação", $("#message").val() + " com sucesso.", "btn_close.png");
+		
+		
+		$.growl("Confirmação", $("#message").val() +
+				"<br />Confirma? <input class='confirm_yes' type='button' value='Sim' /> <input type='button' value='Não' />",
+				{closeButton: ".confirm_yes",
+				autoHide: false,
+				onClose: function(){
+					$.growl("Confirmação", $("#message").val() + " com sucesso.");
+				}
+				});	
+		
+	});		
+});
+</script>
+<style type="text/css">
+	body, input { font: 13px Trebuchet MS; }
+</style>
+<body>
+
+<div id="box" style="display:none;">
+<div style="position:absolute;width: 100%;">
+<div class="right-shadow">
+<div class="bottom-shadow">
+<div class="br">
+<div class="bl">
+    <div class="notice">    
+    <h3>%title%</h3>    
+    <p>%message%</p>
+    </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<fieldset>
+Texto <input id="message" type="text" /><input id="send" type="button" value="Enviar" />
+</fieldset>
+</body>
+</html>
